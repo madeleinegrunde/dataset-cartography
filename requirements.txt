@@ -1,4 +1,4 @@
-git+git://github.com/huggingface/transformers@189113d8910308b9f3509c6946b2147ce57a0bf7
+# git+git://github.com/huggingface/transformers@189113d8910308b9f3509c6946b2147ce57a0bf7
 tqdm==4.43.0
 seaborn==0.10.0
 pandas==1.0.3
