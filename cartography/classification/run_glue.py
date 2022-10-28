@@ -610,6 +610,7 @@ def run_transformer(args):
         ptvsd.enable_attach(address=(args.server_ip, args.server_port), redirect_output=True)
         ptvsd.wait_for_attach()
 
+    print("Cuda is available %s" % torch.cuda.is_available())
     # Setup CUDA, GPU & distributed training
     if args.local_rank == -1 or args.no_cuda:
         device = torch.device("cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu")
@@ -619,6 +620,7 @@ def run_transformer(args):
         device = torch.device("cuda", args.local_rank)
         torch.distributed.init_process_group(backend="nccl")
         args.n_gpu = 1
+    print("Device is: %s" % device)
     args.device = device
 
     # Setup logging
